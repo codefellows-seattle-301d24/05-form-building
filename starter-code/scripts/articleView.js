@@ -86,7 +86,9 @@ articleView.initNewArticlePage = function() {
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  // DONE: Add an event handler to...
+  //  - update the preview field if any inputs change -- DONE
+  //  - update the export field if any inputs change.
   $('form').on('change', function(event){
     /*
     - Grab the template's HTML
@@ -97,22 +99,29 @@ articleView.initNewArticlePage = function() {
     var sourceHTML = $('#preview-template').html();
     var compiledTemplate = Handlebars.compile(sourceHTML);
 
-    
-    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-    this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
+    // if the published box is checked, then calculate how many days ago this article was published, and put that in my article preview.
+    // if the published box is not checked, then just put the text "(draft)" in my article preview
+
+    var today = new Date();
+    var dateText = today.toLocaleDateString(); // this is for the JSON text later. Figure out where to put it
 
     var formData = {
       title: this.title.value,
       body: this.body.value,
       author: this.author.value,
       url: this.url.value,
-      publishStatus: this.publishStatus.value,
+      publishStatus: this.publishStatus.checked ? `published 0 days ago` : '(draft)',
       category: this.category.value
     };
     var fillTemplate = compiledTemplate(formData);
     $('#articles')
       .empty()
       .append(fillTemplate);
+    // Stringify our form data
+    // Grab the disabled input field
+    // Fill the field with our JSON string
+    $('#article-json').val(JSON.stringify(formData));
+    $('#article-export').show();
   })
 
 };
