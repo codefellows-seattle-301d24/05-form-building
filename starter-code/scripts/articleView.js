@@ -87,6 +87,33 @@ articleView.initNewArticlePage = function() {
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  $('form').on('change', function(event){
+    /*
+    - Grab the template's HTML
+    - Compile the template into a callable function
+    - Call the function with the data with which you want to fill the template
+    - Append the filled template to the DOM
+    */
+    var sourceHTML = $('#preview-template').html();
+    var compiledTemplate = Handlebars.compile(sourceHTML);
+
+    
+    this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+    this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
+
+    var formData = {
+      title: this.title.value,
+      body: this.body.value,
+      author: this.author.value,
+      url: this.url.value,
+      publishStatus: this.publishStatus.value,
+      category: this.category.value
+    };
+    var fillTemplate = compiledTemplate(formData);
+    $('#articles')
+      .empty()
+      .append(fillTemplate);
+  })
 
 };
 
