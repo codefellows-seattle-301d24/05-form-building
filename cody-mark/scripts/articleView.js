@@ -135,16 +135,16 @@ articleView.create = function() {
   // DONE: Instantiate an article based on what's in the form fields:
   rawData.push(newArticle);
 
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   var newNewArticle = new Article(JSON.parse(newArticle));
   articles.push(newNewArticle);
   $('#article-post').append(compiledTemplate(newNewArticle));
   $('form')[0].reset();
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
 
 };
 
