@@ -1,6 +1,8 @@
 'use strict';
 
 var articleView = {};
+var sourceHTML = $('#preview-template').html();
+var compiledTemplate = Handlebars.compile(sourceHTML);
 
 articleView.populateFilters = function() {
   $('article').each(function() {
@@ -96,8 +98,6 @@ articleView.initNewArticlePage = function() {
     - Call the function with the data with which you want to fill the template
     - Append the filled template to the DOM
     */
-    var sourceHTML = $('#preview-template').html();
-    var compiledTemplate = Handlebars.compile(sourceHTML);
 
     // if the published box is checked, then calculate how many days ago this article was published, and put that in my article preview.
     // if the published box is not checked, then just put the text "(draft)" in my article preview
@@ -109,7 +109,7 @@ articleView.initNewArticlePage = function() {
       title: this.title.value,
       body: this.body.value,
       author: this.author.value,
-      url: this.url.value,
+      authorUrl: this.authorUrl.value,
       publishStatus: this.publishStatus.checked ? `published 0 days ago` : '(draft)',
       category: this.category.value
     };
@@ -136,7 +136,9 @@ articleView.create = function() {
   rawData.push(newArticle);
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-
+  var newNewArticle = new Article(JSON.parse(newArticle));
+  articles.push(new Article(JSON.parse(newArticle)));
+  $('#articles').append(newNewArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
