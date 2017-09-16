@@ -122,6 +122,7 @@ articleView.initNewArticlePage = function() {
     // Fill the field with our JSON string
     $('#article-json').val(JSON.stringify(formData));
     $('#article-export').show();
+    console.log(formData);
   })
 
 };
@@ -129,11 +130,11 @@ articleView.initNewArticlePage = function() {
 articleView.create = function() {
   // TODO: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
-  var newPost = ;
+  var newPost = ' ' ;
   $('#articles').empty();
 
   // TODO: Instantiate an article based on what's in the form fields:
-
+  $('#article-json').push(rawData);
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
 
@@ -152,4 +153,5 @@ articleView.initIndexPage = function() {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
+  // articleView.create();
 };
