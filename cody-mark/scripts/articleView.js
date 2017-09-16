@@ -91,7 +91,7 @@ articleView.initNewArticlePage = function() {
   // DONE: Add an event handler to...
   //  - update the preview field if any inputs change -- DONE
   //  - update the export field if any inputs change.
-  $('form').on('change', function(event){
+  $('form').on('change', function(){
     /*
     - Grab the template's HTML
     - Compile the template into a callable function
@@ -137,8 +137,9 @@ articleView.create = function() {
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
   var newNewArticle = new Article(JSON.parse(newArticle));
-  articles.push(new Article(JSON.parse(newArticle)));
-  $('#articles').append(newNewArticle.toHtml());
+  articles.push(newNewArticle);
+  $('#article-post').append(compiledTemplate(newNewArticle));
+  $('form')[0].reset();
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
