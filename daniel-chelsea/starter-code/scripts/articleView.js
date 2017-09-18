@@ -72,10 +72,10 @@ articleView.setTeasers = function() {
     }
   });
 };
-
 articleView.initNewArticlePage = function() {
   // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
   $('.tab-content').show();
+  $('#articles').hide();
 
   // DONE: The new articles we create will be copy/pasted into our source data file.
   // We need to allow the container to generate the JSON that will be copy-pasted.
@@ -141,23 +141,19 @@ articleView.create = function (formData) {
   // Done: Instantiate an article based on what's in the form fields:
   var formArticle = new Article(literal);
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  $('#articles').show();
   $(formArticle.toHtml()).appendTo('#articles');
-
   // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
 
-  // $(document).ready(function() {
-  //   $('pre code').each(function(i, block) {
-  //   hljs.highlightBlock(block);
-
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#article-json').val(JSON.stringify(formArticle));
   $('#article-export').show();
-};
 
-articleView.initIndexPage = function() {
-  articleView.populateFilters();
-  articleView.handleCategoryFilter();
-  articleView.handleAuthorFilter();
-  articleView.handleMainNav();
-  articleView.setTeasers();
-};
+  articleView.initIndexPage = function() {
+    articleView.populateFilters();
+    articleView.handleCategoryFilter();
+    articleView.handleAuthorFilter();
+    articleView.handleMainNav();
+    articleView.setTeasers();
+  };
+}
