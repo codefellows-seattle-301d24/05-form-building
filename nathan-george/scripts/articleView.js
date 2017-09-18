@@ -128,7 +128,7 @@ articleView.initNewArticlePage = function() {
 };
 
 articleView.create = function() {
-  new Article(
+  var $newArticle = new Article(
     {
       title: $('#entryTitle').val(),
       body: $('#entryBody').val(),
@@ -145,7 +145,11 @@ articleView.create = function() {
   // DONE: Instantiate an article based on what's in the form fields:
 
 
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
+  var sourceHTML = $newArticle.toHtml();
+  var compiledTemplate = Handlebars.compile(sourceHTML);
+  var fillTemplate = compiledTemplate($newArticle);
+  $('#article-export').append(fillTemplate);
 
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
