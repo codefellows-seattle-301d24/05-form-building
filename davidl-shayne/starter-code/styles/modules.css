@@ -52,16 +52,7 @@
   text-decoration: none;
 }
 
-/*TODO: Add CSS for the "article-export" portion of our new page*/
-
-
-#articles {
-  margin: 1em;
-}
-
-#articles div, section, a {
-  margin: 1em 0em;
-}
+/*DONE (ref: articleExport.css): Add CSS for the "article-export" portion of our new page*/
 
 @media only screen and (min-width: 640px) {
   .icon-menu {

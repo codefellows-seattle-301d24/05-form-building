@@ -122,7 +122,6 @@ articleView.initNewArticlePage = function() {
     // Fill the field with our JSON string
     $('#article-json').val(JSON.stringify(formData));
     $('#article-export').show();
-    console.log(formData);
   })
 
 };
