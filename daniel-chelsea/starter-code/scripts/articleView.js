@@ -109,7 +109,7 @@ articleView.initNewArticlePage = function() {
       title: this.title.value,
       body: this.body.value,
       author: this.author.value,
-      url: this.url.value,
+      authorUrl: this.authorUrl.value,
       publishStatus: this.publishStatus.checked ? `published 0 days ago` : '(draft)',
       category: this.category.value
     };
@@ -138,13 +138,10 @@ articleView.create = function (formData) {
   $(newFormData).each(function(i, obj) {
     literal[obj.name] = obj.value;
   })
-  console.log(literal);
   // Done: Instantiate an article based on what's in the form fields:
   var formArticle = new Article(literal);
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-  var compileForm = Handlebars.compile(formArticle)
-  $('.tab-content').append(compileForm);
-
+  $(formArticle.toHtml()).appendTo('#articles');
 
   // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
 
