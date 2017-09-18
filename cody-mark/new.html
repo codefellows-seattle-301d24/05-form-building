@@ -26,7 +26,7 @@
           <h1>{{title}}</h1>
           <div class="byline">
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
-            {{publishStatus}}
+            {{publishedOn}}
           </div>
         </header>
         <section class="article-body">{{{body}}}</section>
@@ -34,8 +34,8 @@
       </article>
     </script>
     </head>
-  <body>
-    <header class="site-header clearfix">
+  <body class='hero2'>
+    <header class="site-header clearfix" class='hero'>
       <section class="heading-group-h1 pull-left">
         <h1>
           Kilovolt Blog!
@@ -62,40 +62,24 @@
                    4. Author's URL
                    5. Article category
                    6. Some way to know if this article is a draft or is published -->
-         <form action="new.html" method="post">
-           <table>
-             <tr>
-               <td><input type="text" name="title" placeholder="Article Title"/></td>
-             </tr>
-             <tr>
-               <td><textarea name="body" placeholder="Article Body"></textarea></td>
-             </tr>
-             <tr>
-               <td><input type="text" name="author" placeholder="Article Author"/></td>
-             </tr>
-             <tr>
-               <td><input type="text" name="authorUrl" placeholder="Article URL"/></td>
-             </tr>
-             <tr>
-               <td><input type="text" name="category" placeholder="Article Category"/></td>
-             </tr>
-             <tr>
-               <td>
-                 <input type="checkbox" name="publishStatus" />
-                 <label for="publishStatus">Published</label>
-               </td>
-             </tr>
-           </table>
-         </form>
+        <form action="new.html" method="post">
+          <input type="text" name="title" placeholder="Article Title"/>
+          <textarea name="body" placeholder="Article Body"></textarea>
+          <input type="text" name="author" placeholder="Article Author"/>
+          <input type="text" name="authorUrl" placeholder="Article URL"/>
+          <input type="text" name="category" placeholder="Article Category"/>
+          <input id='publish' type="checkbox" name="publishedOn" />
+          <label for="publishedOn">Published Date</label>
+          <button type="button" name="button" id='button'>Publish</button>
+        </form>
       </section>
 
-      <section id="articles" class="tab-content">
+      <pre><code><section id="articles" class="tab-content"></section></code></pre>
         <!-- NOTE: This is where we will display our article preview -->
-      </section>
 
-      <section id="article-export">
+      <section id="article-export" class="clearfix">
         <!-- DONE: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
-        <pre><code><input id="article-json" disabled></code></pre>
+        <input id="article-json" disabled>
         <p>When finalized, copy the above JSON, and paste into blogArticles.js</p>
       </section>
 

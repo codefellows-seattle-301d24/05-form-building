@@ -52,8 +52,16 @@
   text-decoration: none;
 }
 
-/*TODO: Add CSS for the "article-export" portion of our new page*/
-
+/*DONE: Add CSS for the "article-export" portion of our new page*/
+#article-export{
+  text-align: right;
+}
+#article-export input{
+  width: 20%;
+}
+#article-export p{
+  margin-top: 0;
+}
 
 @media only screen and (min-width: 640px) {
   .icon-menu {

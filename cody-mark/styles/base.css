@@ -45,4 +45,30 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
+input,textarea{
+  display: block;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid black 1px;
+  width: 25%;
+  padding-top: 15px;
+  font-family: comic;
+  font-size: 20px;
+}
+textarea{
+  resize: none;
+  height: 200px;
+}
+#publish{
+  display: inline-block;
+}
+label{
+  position: absolute;
+  left: 110px;
+}
+button{
+  margin-top: 10px;
+  display: block;
+}

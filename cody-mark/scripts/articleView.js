@@ -99,8 +99,6 @@ articleView.initNewArticlePage = function() {
     - Append the filled template to the DOM
     */
 
-    // if the published box is checked, then calculate how many days ago this article was published, and put that in my article preview.
-    // if the published box is not checked, then just put the text "(draft)" in my article preview
 
     var today = new Date();
     var dateText = today.toLocaleDateString(); // this is for the JSON text later. Figure out where to put it
@@ -110,16 +108,13 @@ articleView.initNewArticlePage = function() {
       body: this.body.value,
       author: this.author.value,
       authorUrl: this.authorUrl.value,
-      publishStatus: this.publishStatus.checked ? `published 0 days ago` : '(draft)',
+      publishedOn: this.publishedOn.checked ? `published 0 days ago` : '(draft)',
       category: this.category.value
     };
     var fillTemplate = compiledTemplate(formData);
     $('#articles')
       .empty()
       .append(fillTemplate);
-    // Stringify our form data
-    // Grab the disabled input field
-    // Fill the field with our JSON string
     $('#article-json').val(JSON.stringify(formData));
     $('#article-export').show();
   })
@@ -140,13 +135,21 @@ articleView.create = function() {
   articles.push(newNewArticle);
   $('#article-post').append(compiledTemplate(newNewArticle));
   $('form')[0].reset();
+  $('#article-json').val('');
+  $('#article-export').hide();
 
   // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  $('pre code').each(function(i, block){
+    hljs.initHighlightingOnLoad(block);
+  });
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
 
 };
+$('#button').on('click', function(){
+  articleView.create();
+})
+
 
 articleView.initIndexPage = function() {
   articleView.populateFilters();
