@@ -1,0 +1,74 @@
+h1 {
+  font-size: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  color: #313131;
+}
+
+main {
+  margin: auto;
+  width: 90%;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+}
+
+/*TEXT STYLES
+=======================================*/
+p {
+  font-size: 1em;
+}
+
+address {
+  display: inline-block;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover, a:focus {
+  color: #29506D;
+}
+
+a:visited {
+}
+
+/*FORM STYLES
+=======================================*/
+/*TODO: Add the CSS needed to style the form*/
+input {
+  border: 0px;
+  border-bottom: green solid 1px;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+}
+textarea {
+  border: green solid 1px;
+  width: 100%;
+  color: black;
+}
+td {
+  padding: 14px;
+}
+input[type=checkbox] {
+  float: left;
+  width: 3vw;
+}
