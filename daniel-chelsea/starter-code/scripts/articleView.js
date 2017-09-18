@@ -124,29 +124,38 @@ articleView.initNewArticlePage = function() {
     $('#article-export').show();
   })
 
+  $('.newForm').on('change', function() {
+    articleView.create(this);
+  })
 };
 
-articleView.create = function() {
+articleView.create = function (formData) {
   // Done: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
-  var previewArticle;
   $('#articles').empty();
+  var newFormData = $(formData).serializeArray();
+  var literal = {};
+  $(newFormData).each(function(i, obj) {
+    literal[obj.name] = obj.value;
+  })
+  console.log(literal);
   // Done: Instantiate an article based on what's in the form fields:
-  var formArticle = new Article(formData);
+  var formArticle = new Article(literal);
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
   var compileForm = Handlebars.compile(formArticle)
   $('.tab-content').append(compileForm);
 
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $(document).ready(function() {
-    $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
+  // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+
+  // $(document).ready(function() {
+  //   $('pre code').each(function(i, block) {
+  //   hljs.highlightBlock(block);
 
   // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-
+  $('#article-json').val(JSON.stringify(formArticle));
+  $('#article-export').show();
 };
-
 
 articleView.initIndexPage = function() {
   articleView.populateFilters();
