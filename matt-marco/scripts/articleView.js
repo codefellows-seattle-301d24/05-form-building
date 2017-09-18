@@ -109,7 +109,7 @@ articleView.initNewArticlePage = function() {
       title: this.title.value,
       body: this.body.value,
       author: this.author.value,
-      url: this.authorUrl.value,
+      authorUrl: this.authorUrl.value,
       publishStatus: this.publishStatus.checked ? `published 0 days ago` : '(draft)',
       category: this.category.value
     };
