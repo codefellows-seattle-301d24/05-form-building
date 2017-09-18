@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="styles/modules.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
     <!-- NOTE (stretch goal): Include script tags for 3rd party libraries to enable Markdown rendering and code syntax highlighting. If we are not using a CDN and instead choose to store these scripts with our project, make sure to put them into an appropriate location in the 'vendor' directory. Keep in mind that if we want these features to render properly on our main blog page (index.html) that we'll need to add those scripts over there, too. -->
 
     <!-- NOTE (stretch goal): To fully incorporate the highlighting library "hljs" we need to fill the empty link tag below to refer to a CSS file that will handle our text highlighting -->
     <link>
     <!-- DONE: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
-    <script id="preview-template" type="text/x-handlebars-template">
+    <script id="article-template" type="text/x-handlebars-template">
       <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
         <header>
           <h1>{{title}}</h1>
@@ -77,7 +80,7 @@
              </tr>
              <tr>
                <td>
-                 <input type="checkbox" name="publishStatus" />
+                 <input class="check" type="checkbox" name="publishStatus" />
                  <label for="publishStatus">Published</label>
                </td>
              </tr>
@@ -87,6 +90,7 @@
 
       <section id="articles" class="tab-content">
         <!-- NOTE: This is where we will display our article preview -->
+        <pre><code class="precode"></code></pre>
       </section>
 
       <section id="article-export">

@@ -96,7 +96,7 @@ articleView.initNewArticlePage = function() {
     - Call the function with the data with which you want to fill the template
     - Append the filled template to the DOM
     */
-    var sourceHTML = $('#preview-template').html();
+    var sourceHTML = $('#article-template').html();
     var compiledTemplate = Handlebars.compile(sourceHTML);
 
     // if the published box is checked, then calculate how many days ago this article was published, and put that in my article preview.
@@ -143,20 +143,21 @@ articleView.create = function() {
       publishedOn: $('input[name="publishStatus"]').is(':checked') ? today.toLocaleDateString() : 'draft'
     });
 
-  console.log(newArticle);
+
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  $('#articles').append(newArticle.toHtml());
 
-  var sourceHTML = $('#preview-template').html()
-  var actualTemplate = Handlebars.compile(sourceHTML);
-  var newRawHTML = actualTemplate(this);
-  $('#articles').append(newRawHTML);
 
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 
   // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  $('#article-export').val(JSON.stringify(newArticle));
+  $('#article-export').show();
 
 };
 

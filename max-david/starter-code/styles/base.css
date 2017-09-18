@@ -45,4 +45,27 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
+form{
+  font-weight: lighter;
+  font-family: Helvetica;
+  width: 200%;
+}
+
+table{
+  width: 75%;
+}
+
+textarea{
+  width: 60%;
+}
+label{
+  float: left;
+}
+.check{
+  width: 2%;
+}
+form td input{
+  width: 60%;
+  border-color: green;
+}
