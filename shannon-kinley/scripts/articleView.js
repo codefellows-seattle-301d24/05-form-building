@@ -96,15 +96,13 @@ articleView.initNewArticlePage = function() {
 }
 
 articleView.create = function(event) {
-  // TODO: Set up a var to hold the new article we are creating.
+  // DONE: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
   var fillTemplate;
   $('#articles')
-    .empty()
-    .append(fillTemplate);
+    .empty();
 
-
-    // TODO: Instantiate an article based on what's in the form fields:
+    // DONE: Instantiate an article based on what's in the form fields:
   var sourceHTML = $('#preview-template').html();
   var compiledTemplate = Handlebars.compile(sourceHTML);
 
@@ -118,14 +116,17 @@ articleView.create = function(event) {
   };
 
 
-    // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+    // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   fillTemplate = compiledTemplate(formData);
   $('#articles').append(fillTemplate);
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  hljs.configure({useBR: true});
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   var today = new Date();
   var dateText = today.toLocaleDateString(); // this is for the JSON text later. Figure out where to put it
   $('#article-json').val(JSON.stringify(formData));

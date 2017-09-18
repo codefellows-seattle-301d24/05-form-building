@@ -45,4 +45,43 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
+
+h1 {
+  font-size: inherit;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+}
+
+td {
+  font-size: 2em;
+  padding: 1vh 0;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-bottom: thin solid green;
+}
+
+textarea {
+  width: 100%;
+  border: thin solid green;
+  height: 30vh;
+  margin-top: 4vh;
+}
+
+input[type="checkbox"] {
+  transform: scale(2.5);
+  width: auto;
+}
+
+label {
+  padding-left: 2vw;
+}
