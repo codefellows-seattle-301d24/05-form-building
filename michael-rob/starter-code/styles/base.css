@@ -45,7 +45,7 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
 input, textarea{
   width: 100vw;
   border: thin solid black;

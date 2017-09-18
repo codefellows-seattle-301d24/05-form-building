@@ -52,7 +52,7 @@
   text-decoration: none;
 }
 
-/*TODO: Add CSS for the "article-export" portion of our new page*/
+/*DONE: Add CSS for the "article-export" portion of our new page*/
 #article-export input, p{
   background-color: white;
   border: none;
