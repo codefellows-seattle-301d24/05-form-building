@@ -45,4 +45,24 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
+#entryTitle, #entryAuthor, #entryURL, #entryCategory {
+    border-bottom-color: green;
+}
+#entryBody {
+  border-color: green;
+}
+
+table {
+  width: 100%;
+}
+input {
+  width: 100%;
+}
+textarea {
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+}
