@@ -127,21 +127,21 @@ articleView.initNewArticlePage = function() {
 };
 
 articleView.create = function() {
-  // TODO: Set up a var to hold the new article we are creating.
+  // DONE: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
   var $newArticle = $('#article-template').html();
   $('#articles').removeAttr('id');
-  // TODO: Instantiate an article based on what's in the form fields:
+  // DONE: Instantiate an article based on what's in the form fields:
+  // Done above
 
-
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-
+  // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
+  // Done above
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // Done above
 };
 
 
@@ -151,5 +151,4 @@ articleView.initIndexPage = function() {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-  articleView.create();
 };
