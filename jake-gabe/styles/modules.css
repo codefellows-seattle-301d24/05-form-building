@@ -54,7 +54,9 @@
 
 /*DONE: Add CSS for the "article-export" portion of our new page*/
 #article-export {
+  width: 60%;
   color: #8f928f;
+  float: right;
 }
 
 #article-json {
