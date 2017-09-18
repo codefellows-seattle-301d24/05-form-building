@@ -50,3 +50,12 @@ a:visited {
 /*FORM STYLES
 =======================================*/
 /*TODO: Add the CSS needed to style the form*/
+input {
+  border: 0px;
+  border-bottom: green solid 1px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
