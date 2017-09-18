@@ -52,7 +52,17 @@
   text-decoration: none;
 }
 
-/*TODO: Add CSS for the "article-export" portion of our new page*/
+/*DONE: Add CSS for the "article-export" portion of our new page*/
+#article-export {
+  width: 60%;
+  color: #8f928f;
+  float: right;
+}
+
+#article-json {
+  border: none;
+  width: 80%
+}
 
 
 @media only screen and (min-width: 640px) {

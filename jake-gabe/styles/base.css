@@ -45,4 +45,21 @@ a:visited {
 
 /*FORM STYLES
 =======================================*/
-/*TODO: Add the CSS needed to style the form*/
+/*DONE: Add the CSS needed to style the form*/
+table {
+  width: 80%;
+}
+input, textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  border: none;
+}
+
+textarea {
+  border: thin solid green;
+  height: 10em;
+}
+
+input {
+  border-bottom: thin solid green;
+}
