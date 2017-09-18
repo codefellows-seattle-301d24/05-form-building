@@ -54,8 +54,21 @@ input {
   border: 0px;
   border-bottom: green solid 1px;
   width: 100%;
+  color: black;
+  font-weight: bold;
 }
-
 table {
   width: 100%;
+}
+textarea {
+  border: green solid 1px;
+  width: 100%;
+  color: black;
+}
+td {
+  padding: 14px;
+}
+input[type=checkbox] {
+  float: left;
+  width: 3vw;
 }
