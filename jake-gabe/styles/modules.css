@@ -52,7 +52,16 @@
   text-decoration: none;
 }
 
-/*TODO: Add CSS for the "article-export" portion of our new page*/
+/*DONE: Add CSS for the "article-export" portion of our new page*/
+#article-export {
+  background-color: #cfddde;
+  color: green;
+}
+
+#article-json {
+  background-color: #cfddde;
+  border: none;
+}
 
 
 @media only screen and (min-width: 640px) {
