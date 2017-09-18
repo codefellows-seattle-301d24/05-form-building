@@ -58,7 +58,7 @@
                    4. Author's URL
                    5. Article category
                    6. Some way to know if this article is a draft or is published -->
-         <form class="" action="index.html" method="post">
+         <form action="index.html" method="post">
            <table>
              <tr>
                <td><input type="text" name="title" placeholder="Article Title"/></td>
@@ -92,7 +92,7 @@
       <section id="article-export">
         <!-- DONE: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
         <input id="article-json" disabled>
-        <p>When finalized, copy the above JSON, and paste into blogArticles.js</p>
+        <p class="copy-text">When finalized, copy the above JSON, and paste into blogArticles.js</p>
       </section>
 
     </main>
@@ -104,7 +104,7 @@
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script>
-      // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+      // DONE: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
       articleView.initNewArticlePage();
