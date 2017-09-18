@@ -138,7 +138,9 @@ articleView.create = function() {
   // Done above
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  $('pre code').each((function(i, block) {
+    hljs.highlightBlock(block);
+  }));
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   // Done above
