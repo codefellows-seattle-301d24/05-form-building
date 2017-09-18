@@ -54,13 +54,12 @@
 
 /*DONE: Add CSS for the "article-export" portion of our new page*/
 #article-export {
-  background-color: #cfddde;
-  color: green;
+  color: #8f928f;
 }
 
 #article-json {
-  background-color: #cfddde;
   border: none;
+  width: 80%
 }
 
 
