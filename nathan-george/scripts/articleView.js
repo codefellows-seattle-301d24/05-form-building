@@ -152,10 +152,10 @@ articleView.create = function() {
   $('#article-export').append(fillTemplate);
 
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  // ???: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
 
 };
 
