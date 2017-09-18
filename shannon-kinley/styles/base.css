@@ -67,12 +67,12 @@ td {
 input {
   width: 100%;
   border: none;
-  border-bottom: thin solid green;
+  border-bottom: thin solid rgb(92, 182, 43);
 }
 
 textarea {
   width: 100%;
-  border: thin solid green;
+  border: thin solid rgb(92, 182, 43);
   height: 30vh;
   margin-top: 4vh;
 }

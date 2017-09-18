@@ -90,7 +90,6 @@ articleView.initNewArticlePage = function() {
   //  - update the preview field if any inputs change -- DONE
   //  - update the export field if any inputs change.
   $('form').on('change', function(event){
-    // console.log(event.currentTarget);
     articleView.create(event);
   });
 }
@@ -105,6 +104,9 @@ articleView.create = function(event) {
     // DONE: Instantiate an article based on what's in the form fields:
   var sourceHTML = $('#preview-template').html();
   var compiledTemplate = Handlebars.compile(sourceHTML);
+
+  var today = new Date();
+  var dateText = today.toLocaleDateString(); // this is for the JSON text later. Figure out where to put it
 
   var formData = {
     title: event.currentTarget.title.value,
@@ -121,14 +123,9 @@ articleView.create = function(event) {
   $('#articles').append(fillTemplate);
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  hljs.configure({useBR: true});
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-  var today = new Date();
-  var dateText = today.toLocaleDateString(); // this is for the JSON text later. Figure out where to put it
+  formData.publishedOn = dateText;
   $('#article-json').val(JSON.stringify(formData));
   $('#article-export').show();
 };
