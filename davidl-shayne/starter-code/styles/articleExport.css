@@ -1,0 +1,7 @@
+#articles {
+  margin: 1em;
+}
+
+#articles div, section, a {
+  margin: 1em 0em;
+}
