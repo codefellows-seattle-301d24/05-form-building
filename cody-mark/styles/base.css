@@ -1,0 +1,74 @@
+img {
+  max-width: 100%;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  color: #313131;
+}
+
+main {
+  margin: auto;
+  width: 90%;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+}
+
+/*TEXT STYLES
+=======================================*/
+p {
+  font-size: 1em;
+}
+
+address {
+  display: inline-block;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover, a:focus {
+  color: #29506D;
+}
+
+a:visited {
+}
+
+/*FORM STYLES
+=======================================*/
+/*DONE: Add the CSS needed to style the form*/
+input,textarea{
+  display: block;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid black 1px;
+  width: 25%;
+  padding-top: 15px;
+  font-family: comic;
+  font-size: 20px;
+}
+textarea{
+  resize: none;
+  height: 200px;
+}
+#publish{
+  display: inline-block;
+}
+label{
+  position: absolute;
+  left: 110px;
+}
+button{
+  margin-top: 10px;
+  display: block;
+}
