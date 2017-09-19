@@ -129,8 +129,6 @@ articleView.initNewArticlePage = function() {
 articleView.create = function() {
   // DONE: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
-  var $newArticle = $('#article-template').html();
-  $('#articles').removeAttr('id');
   // DONE: Instantiate an article based on what's in the form fields:
   // Done above
 
